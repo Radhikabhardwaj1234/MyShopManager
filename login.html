@@ -1,0 +1,250 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="project.css"> -->
+    <style>
+        *{
+  scroll-behavior: smooth;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            color: rgba(50, 239, 91,0.9);
+            padding: 20px;
+            background-color:black;
+            animation: fadeInDown 1s ease forwards;
+        }
+        #logo img {
+            width: 40%;
+            height: auto;
+            float: left;
+        }
+      
+        nav {
+            text-align: center;
+            color: #fff;
+            padding: 10px 0;
+            animation: fadeInDown 1s ease forwards;
+           
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            
+            margin: 0 10px;
+            display: inline-block;
+        }
+        nav ul li a {
+           font-size: 25px;
+            color: rgba(50, 239, 91,0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+          margin-top: -150px;
+        }
+        nav >ul>li::after{
+        content:'';
+        width:0%;
+        height: 2px;
+        background:red;
+        display:block;
+        margin:auto;
+        transition:0.5s;
+        
+        }
+        nav >ul>li:hover::after{
+        width:60%;
+
+        }
+        nav ul li a:hover {
+        color:rgba(50, 239, 91);
+        }
+        
+         #headingLogin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 120px); 
+            /* width:80%;
+            background-color: rgba(255, 255, 255, 0.4); */
+         
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.6); 
+            border-radius: 8px;
+            padding: 40px;
+            width: 400px;
+            height: 60%;
+            text-align: center;
+        
+            box-shadow: 0px 0px 20px 15px rgba(50, 239, 91,0.6);
+        }
+        .login-container h3 {
+            color: #333; 
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+            font-size: 20px;
+        }
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            outline: none;
+            float: left;
+        }
+        .input-group input[type="text"]:focus,
+        .input-group input[type="password"]:focus {
+            border-color: #00ff48;
+           
+        }
+        .input-group button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            float: left;
+            border-radius: 8px;
+            border: none;
+            background-color:rgba(15, 205, 56, 0.9);
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+        .input-group button:hover {
+            background-color:#00ff48;
+        }
+        .register-link {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333; 
+        }
+        .register-link a {
+            color:rgba(11, 137, 39, 0.9) ;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        } 
+        #header_center{
+          
+           
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width:100%;
+    display: inline-block;
+}
+        
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .show-password-icon {
+            cursor: pointer;}
+
+       
+      
+    </style>
+</head>
+<body>
+  
+<header>
+  <div id="logo">
+    <a href="home.html">
+      <img src="logo.jpg" alt="Logo">
+    </a>
+  </div>
+
+ 
+<nav>
+  <ul>
+    <li><a href="front.html">Home</a></li>
+    <li><a href="home.html#about">About Us</a></li>
+    <li><a href="front.html#section2">Services</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+  </ul>
+</nav> 
+</header>
+<div id="headingLogin">
+  <div class="login-container">
+    <h3></h3>
+    <br><br>
+    <form action="/login" method="POST">
+      <div class="input-group">
+        <label for="username">Email:</label>
+        <input type="text" id="username" name="username" placeholder="Email" required>
+
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password" required >
+        <i class="fas fa-eye show-password-icon" onclick="togglePasswordVisibility()"></i>
+        
+      </div>
+      <div class="input-group">
+        <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+      </div>
+    </form>
+    <div class="register-link">
+     <strong> Don't have an account?</strong> <a href="register.html">Register here</a>
+    </div>
+  </div>
+</div>
+<script>
+   function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var passwordIcon = document.querySelector('.show-password-icon');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordIcon.classList.remove('fa-eye');
+            passwordIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            passwordIcon.classList.remove('fa-eye-slash');
+            passwordIcon.classList.add('fa-eye');
+        }
+    }
+</script>
+</body>
+</html>

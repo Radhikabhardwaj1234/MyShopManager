@@ -1,0 +1,355 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShopManager - Simplify Your Shop Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color:black;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: bold;
+  color:white ;
+  display: inline-block;
+}
+.navbar {
+background-color: black !important;
+justify-content: space-between;
+}
+
+.navbar img {
+width: 20%; 
+float: left;
+margin-left: -140px;
+}
+
+.jumbotron {
+  background-image: url("com.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.jumbotron h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.jumbotron h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  font-size: 18px;
+  padding: 12px 40px;
+  margin-top: 40px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+}
+
+.additional-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.additional-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.additional-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.company-info {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.company-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.section2 {
+
+background-image: url("phone.jpg");
+background-size: cover;
+color: #fff;
+text-align: center;
+padding: 100px 0;
+margin-bottom: 0;
+position: relative;
+height: 200vh;
+}
+.section2 h5{
+margin-top: -18px;
+}  
+.section2 h1{
+font-size: 60px;
+margin-top: -18px;
+}   
+.features {
+background-color: rgba(0, 0, 0, 0.6);
+padding: 30px;
+border-radius: 10px;
+max-width: 90%;
+margin:auto;
+height:35vh;
+margin-bottom: 8px;
+}
+
+.features h2 {
+font-size: 24px;
+font-weight: bold;
+color: #fff;
+margin-bottom: 40px;
+margin-top: 20PX;
+margin-left:5px ;
+}
+
+.features ul {
+list-style-type: none;
+padding: 0;
+text-align: left;
+}
+
+.features ul li {
+margin-bottom: 10px;
+font-size: 18px;
+}
+
+.features ul li::before {
+content: '\2713'; /* Tick symbol */
+margin-right: 10px;
+color: #fff;
+}
+
+.additional-content {
+background-color: #f8f9fa;
+padding: 50px 0;
+}
+
+.feature-item {
+text-align: center;
+padding: 20px;
+border-radius: 5px;
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+transform: translateY(-5px);
+}
+
+.feature-item .icon {
+font-size: 40px;
+margin-bottom: 20px;
+}
+
+.feature-item h4 {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.feature-item p {
+font-size: 16px;
+color: #666;
+}
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+</style>
+<body>
+    <header>
+        <nav class="navbar bg-dark">
+            <div class="container">
+               <img src="logo.jpg">
+              
+               <h1 style="color:white; margin-left: 300px;">MyShopManager</h1> 
+                <div id="button" class="mr-0">
+                    <a href="login.html" class="btn btn-primary mr-2">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        
+        </nav>
+    </header>
+    <video autoplay loop muted id="video-background">
+        <source src="business_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Business hua aur bhi easy</h1>
+            <h2>with MyShopManager</h2>
+            <p class="lead">MyShopManager helps you manage your shop efficiently, from generating bills to tracking income.</p>
+            <a href="register.html" class="btn btn-primary cta-btn">Get Started</a>
+
+            
+            <div class="additional-content">
+                <h2>Billing & Accounting for all businesses</h2>
+                <p>Sales and purchase accounting</p>
+                <p>Easy bill creation</p>
+                <p>Stock management Digitally</p>
+            </div>
+        </div>
+    </div>
+    <section class="section2" id="section2">
+    <div class="section2Div">
+    <h5 class="text-center mb-4">POWERFUL FEATURES TO HELP YOU</h5>
+    <h1 class="text-center">Built with features for</h1>
+    <h1 class="text-center">growing businesses</h1><br>
+    </div>
+    <div class="features">
+        <h2>GST & Non-GST Bills</h2>
+        <ul>
+            <li>Create customized invoices & easily share with customers</li>
+            <li>Custom fields like Vehicle No, PO No etc.</li>
+            <li>Detailed sales and purchase reports</li>
+            <li>No double-entry across khata and cashbook</li>
+        </ul>
+    </div>
+    <div class="features">
+       <h2>Inventory Management</h2>
+            <ul>
+                <li>Track your stock in/out and profits</li>
+                <li>Detailed stock history with sale & purchase price with notes</li>
+                <li>Low stock tracking</li>
+                <li>Profit tracking at daily, weekly and monthly level</li>
+            </ul>
+        </div>
+    <div class="features">
+       
+            <h2>Track your business growth</h2>
+            <ul>
+                <li>Use Khatabook across different devices</li>
+                <li>Data synced across mobile and desktop devices</li>
+                <li>Use Khatabook in both online and offline mode (Coming Soon)</li>
+             
+            </ul>
+</div>
+    <div class="features">
+       
+            <h2>Business management on the go</h2>
+            <ul>
+                <li>Use Khatabook across different devices</li>
+                <li>Data synced across mobile and desktop devices</li>
+                <li>Use Khatabook in both online and offline mode (Coming Soon)</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="additional-content">
+    <h5 CLASS="mb-5"><center>AND THAT'S NOT ALL</center></h5>
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-store"></i></div>
+                    <h4>Manage Multiple Businesses</h4>
+                    <p>Manage multiple businesses from the same account</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h4>Automatic Backup</h4>
+                    <p>Your data is automatically backed up when connected to the internet in a secured way.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>GST & Business Reports</h4>
+                    <p>Get all GST reports & other insights to run your business efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+        <div class="container mt-4 p-4 bg-white ">
+            <h1 class="display-3">Get started with </h1>
+            <h2>with MyShopManager</h2>
+            <p class="lead">MyShopManager helps you manage your shop efficiently, from generating bills to tracking income.</p>
+            <a href="register.html" class="btn btn-primary cta-btn">Get Started</a>
+      </div>
+</section>
+     <footer id="contact" class="company-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center">
+                    <h3>Contact Us</h3>
+                    <p>MyShopManager is here to simplify your shop management.</p>
+                    <p><strong>Phone:</strong> +91-9606800800</p>
+                    <p><strong>Email:</strong> contact@myshopmanager.com</p>
+                    <p><strong>Address:</strong> 123 Business Street, City, Country</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center social-icons">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin-in"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+

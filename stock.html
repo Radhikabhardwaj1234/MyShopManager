@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Management</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <a href="home.html">
+        <img src="logo.jpg" width=40%>
+      </a>
+    </div>
+    <div id="header_center">
+     
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="home.html#about">About Us</a></li>
+        <li><a href="home.html#services">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      
+      </ul>
+    </nav>
+  </header>
+  <div class="stock_container">
+    <h1>Stock Management</h1>
+    <form id="productForm">
+      <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" class="form-control" id="productName" placeholder="product name" required>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" id="quantity" placeholder="quantity" required>
+      </div>
+      <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+    <h2>Product List</h2>
+    <div class="list" >
+    <table id="productTable" class="table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="productList"></tbody>
+    </table>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#productForm').submit(function(event) {
+        event.preventDefault();
+        var productName = $('#productName').val();
+        var quantity = $('#quantity').val();
+        var tableRow = '<tr><td>' + productName + '</td><td>' + quantity + '</td><td><button class="btn btn-sm btn-primary edit">Edit</button></td></tr>';
+        $('#productList').append(tableRow);
+        $('#productName').val('');
+        $('#quantity').val('');
+      });
+
+      $('#productList').on('click', '.edit', function() {
+        var tableRow = $(this).closest('tr');
+        var productName = tableRow.find('td:eq(0)').text();
+        var quantity = tableRow.find('td:eq(1)').text();
+        var newProductName = prompt('Enter new product name:', productName);
+        var newQuantity = prompt('Enter new quantity:', quantity);
+        if (newProductName !== null && newQuantity !== null) {
+          tableRow.find('td:eq(0)').text(newProductName);
+          tableRow.find('td:eq(1)').text(newQuantity);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

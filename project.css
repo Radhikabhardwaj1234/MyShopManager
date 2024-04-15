@@ -1,0 +1,555 @@
+*{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:black;
+  
+}
+header {
+ text-align: center;
+  color: rgba(50, 239, 91, 0.9);
+  padding: 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease forwards;
+}
+#logo img{
+  float:left;
+  width: 40%;
+  height: auto;
+  float: left;
+}
+#logo{
+  width:40%;
+
+}
+#header_center{
+  display: inline-block;
+  /* margin-left: 40px; */
+  width:80%;
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+nav {
+
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+}
+
+nav ul li a{
+  font-size:20px;
+  color:rgba(50, 239, 91, 0.9);
+
+}
+nav >ul>li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  
+}
+
+nav >ul>li::after{
+  content:'';
+  width:0%;
+  height: 2px;
+  background:red;
+  display:block;
+  margin:auto;
+  transition:0.5s;
+ 
+}
+nav >ul>li:hover::after{
+  width:60%;
+
+}
+nav ul li a:hover {
+  color:rgba(50, 239, 91);
+  text-decoration: none;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+.slider {
+  width: 100%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  animation: zoomIn 1s ease forwards;
+  margin-bottom: 5px;
+ 
+}
+.slider:hover{
+  box-shadow: 5px 5px 25px 15px rgba(50, 239, 91, 0.6);
+}
+.slick-slide img {
+  width: 100%;
+ 
+}
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: zoomIn 1s ease forwards;
+  color:black;
+  margin-bottom:30px;
+}
+#services h2{
+  coloR:white;
+
+}
+.service:hover{
+  background-color: rgba(50, 239, 91, 0.9);
+}
+#about{
+  color:white;
+}
+#contact{
+  color:white;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.service {
+  width: calc(33.33% - 40px);
+  margin: 45px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 15px rgba(50, 239, 91, 0.5);
+  transition: transform 0.3s ease;
+  color:black;
+  text-decoration: none;
+}
+.service a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.service:hover {
+  transform: translateY(-5px);
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+
+/*billing*/
+
+
+.billing_container {
+  margin: 40px;
+ background-color:#333;
+ border-radius: 8px;
+  box-shadow: 0px 0px 20px 15px rgba(50, 239, 91, 0.6);
+  padding: 20px;
+  width: 80%;
+  height: 90vh;
+  margin:30px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color:rgb(24, 225, 81);
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  margin-top: 15px;
+
+}
+
+
+.product button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.product input[type="text"],
+.product input[type="number"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: white;
+}
+.product button:hover {
+  background-color: #56f55e;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#total span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#invoiceBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#invoiceBtn:hover {
+  background-color: #0056b3;
+}
+
+#list {
+  overflow: auto;
+  height: 370px;
+  color:rgb(24, 225, 81);
+  margin-top: 20px;
+}
+
+/* stock*/
+
+.stock_container {
+  margin: 40px auto;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 15px rgba(50, 239, 91, 0.6);
+  padding: 20px;
+  width: 60%;
+  height: 110vh;
+}
+
+#productForm {
+  margin-top: 20px;
+}
+
+h2,
+h1 {
+  color: rgb(24, 225, 81);
+  text-align: center;
+  margin: 30px;
+
+}
+
+table th {
+  color: rgb(24, 225, 81);
+}
+
+.form-group label {
+  color: rgb(24, 225, 81);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: white;
+}
+#productList{
+color:rgb(24, 225, 81);
+background-color: #333;
+}
+.list{
+overflow: auto;
+height: 50vh;
+}
+
+/*dues*/
+
+.dues_container {
+  margin: 40px auto;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 15px rgba(50, 239, 91, 0.6);
+  padding: 20px;
+  width: 60%;
+  height: 110vh;
+  color: rgb(24, 225, 81);
+}
+#duesTable{
+color:rgb(24, 225, 81);
+
+}
+
+/*income*/
+
+.income_container {
+  margin: 40px auto;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 15px rgba(50, 239, 91, 0.6);
+  padding: 20px;
+  width: 50%;
+  height: 110vh;
+  color:rgb(25,225,81);
+  margin-top: 40px;
+}
+
+
+/*contact*/
+#contact{
+  width:100%;
+}
+
+
+/*contact*/
+
+.contact-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  height: 50vh;
+  width:750px;
+}
+
+.contact-info {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 45%;
+  text-align: center;
+  box-shadow: 0px 0px 20px 5px rgba(50, 239, 91, 0.2);
+  transition: transform 0.3s ease;
+  margin: 10px;
+ 
+}
+.contact-info:hover {
+  transform: translateY(-5px);
+}
+.contact-info i {
+  font-size: 40px;
+  color: rgba(50, 239, 91);
+  margin:0px 10px;
+  
+}
+.contact-info h3 {
+  margin-bottom: 10px;
+  color: #333;
+  margin: auto;
+}
+.contact-info p {
+  color: #666;
+}
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.login-container{
+background-color: rgba(255, 255, 255, 0.6);
+border-radius: 8px;
+padding: 40px;
+width: 80%;
+max-width: 750px;
+margin: 50px auto;
+text-align: center;
+box-shadow: 0px 0px 20px 15px rgba(50, 239, 91, 0.6);
+}
+.login-container h3 {
+color: #333;
+margin-bottom: 20px;
+}
+
+/*login*/
+
+
+      
+      
+#headingLogin {
+display: flex;
+justify-content: center;
+align-items: center;
+height: calc(100vh - 120px); 
+/* width:80%;
+background-color: rgba(255, 255, 255, 0.4); */
+
+}
+        
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: bold;
+text-align: left;
+font-size: 20px;
+}
+.input-group input[type="text"],input[type="email"],
+.input-group input[type="password"] {
+width: calc(100% - 22px);
+padding: 10px;
+border-radius: 10px;
+border: 1px solid #ccc;
+box-sizing: border-box;
+margin-bottom: 20px;
+outline: none;
+float: left;
+}
+.input-group input[type="text"]:focus,input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+border-color: #00ff48;
+
+}
+.input-group button {
+width: calc(100% - 22px);
+padding: 10px;
+float: left;
+border-radius: 8px;
+border: none;
+background-color:rgba(15, 205, 56, 0.9);
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s;
+margin-bottom: 20px;
+}
+.input-group button:hover {
+background-color:#00ff48;
+}
+.register-link {
+margin-top: 10px;
+font-size: 14px;
+color: #333; 
+}
+.register-link a {
+color:rgba(11, 137, 39, 0.9) ;
+text-decoration: none;
+font-weight: bold;
+}
+.register-link a:hover {
+text-decoration: underline;
+} 
+#header_center{
+flex: 1;
+display: flex;
+justify-content: center; 
+align-items: center;
+width:100%;
+display: inline-block;
+}
+
+  .show-password-icon {
+      cursor: pointer;}
+
+/*REGISTRATION*/
+
+.registration-container {
+  background-color: rgba(255, 255, 255, 0.6); 
+  border-radius: 8px;
+  padding: 40px;
+  width: 400px;
+  height: 60%;
+  text-align: center;
+  margin:25px auto;
+  box-shadow: 0px 0px 20px 15px rgba(50, 239, 91,0.6);
+}
+.registration-container h3 {
+  color: #333; 
+  margin-bottom: 20px;
+}
+.register-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333; 
+}
+.register-link a {
+  color:rgba(11, 137, 39, 0.9) ;
+  text-decoration: none;
+  font-weight: bold;
+}
+.register-link a:hover {
+  text-decoration: underline;
+} 

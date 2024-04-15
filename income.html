@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tracking</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <a href="home.html">
+        <img src="logo.jpg" width=40%>
+      </a>
+    </div>
+    <div id="header_center">
+     
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="home.html#about">About Us</a></li>
+        <li><a href="home.html#services">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+  <section>
+  <div class="income_container">
+
+    <form id="dailyIncomeForm">
+      <div class="form-group mt-5">
+        <label for="dailyIncome"><strong>Enter Todays's Income:</strong></label>
+        <br><br>
+        <input type="number" class="form-control" id="dailyIncome" placeholder="Enter daily income" required>
+      </div>
+      <button type="submit" class="btn btn-success mb-3 mt-3">Submit</button>
+    </form>
+
+ 
+    <canvas id="dailyIncomeChart" style="display: none;"></canvas>
+
+
+    <div class="btn-group mt-3 mb-3" role="group" aria-label="Income Period">
+      <button type="button" class="btn btn-secondary" id="dailyBtn">Weekly</button>
+      <button type="button" class="btn btn-secondary" id="dailyBtn">Monthly</button>
+      <button type="button" class="btn btn-secondary" id="dailyBtn">Yearly</button>
+    </div>
+
+
+
+    <canvas id="weeklyIncomeChart" style="display: none;"></canvas>
+
+
+
+    <canvas id="monthlyIncomeChart" style="display: none;"></canvas>
+  </div>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script src="script.js"></script>
+  <script>
+
+    var dailyIncome = [];
+
+
+    document.getElementById('dailyIncomeForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+    
+      var income = parseFloat(document.getElementById('dailyIncome').value);
+      dailyIncome.push(income);
+
+      showDailyIncomeChart();
+    });
+
+
+    function showDailyIncomeChart() {
+      document.getElementById('dailyIncomeChart').style.display = 'block';
+      document.getElementById('weeklyIncomeChart').style.display = 'none';
+      document.getElementById('monthlyIncomeChart').style.display = 'none';
+
+      var dailyIncomeLabels = [];
+      for (var i = 1; i <= dailyIncome.length; i++) {
+        dailyIncomeLabels.push('Day ' + i);
+      }
+
+      var dailyIncomeData = {
+        labels: dailyIncomeLabels,
+        datasets: [{
+          label: 'Daily Income',
+          data: dailyIncome,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        }]
+      };
+
+   
+      var dailyIncomeCtx = document.getElementById('dailyIncomeChart').getContext('2d');
+      var dailyIncomeChart = new Chart(dailyIncomeCtx, {
+        type: 'line',
+        data: dailyIncomeData,
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    }
+    document.getElementById('dailyBtn').addEventListener('click', function() {
+      showDailyIncomeChart();
+    });
+    document.getElementById('weeklyBtn').addEventListener('click', function() {
+      showDailyIncomeChart();
+    });
+
+    document.getElementById('weeklyBtn').addEventListener('click', function() {
+      // Show weekly income chart
+      document.getElementById('dailyIncomeChart').style.display = 'none';
+      document.getElementById('weeklyIncomeChart').style.display = 'block';
+      document.getElementById('monthlyIncomeChart').style.display = 'none';
+    });
+
+    document.getElementById('monthlyBtn').addEventListener('click', function() {
+      // Show monthly income chart
+      document.getElementById('dailyIncomeChart').style.display = 'none';
+      document.getElementById('weeklyIncomeChart').style.display = 'none';
+      document.getElementById('monthlyIncomeChart').style.display = 'block';
+    });
+
+    // Implement similar functionality for weekly and monthly income
+  </script>
+</body>
+</html>

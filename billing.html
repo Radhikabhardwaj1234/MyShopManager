@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" href="project.css"/>
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <a href="home.html">
+        <img src="logo.jpg" width=40%>
+      </a>
+    </div>
+    <div id="header_center">
+     
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="home.html#about">About Us</a></li>
+        <li><a href="home.html#services">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <div class="billing_container">
+    <h1>Billing System</h1>
+    <div class="product">
+      <input type="text" class="form-control" id="productName" placeholder="Product Name">
+      <input type="number" id="quantity" placeholder="Quantity">
+      <input type="number" id="price" placeholder="Price">
+      <button id="addProduct">Add Product</button>
+    </div>
+    <div id="list">
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+            <th>Total (₹)</th>
+          </tr>
+        </thead>
+        <tbody id="productList"></tbody>
+      </table>
+    </div>
+    <div id="total">
+      Total: ₹<span id="totalAmount">0.00</span>
+    </div>
+
+    <button id="invoiceBtn">Generate Invoice</button>
+  </div>
+
+  <script>
+    document.getElementById('addProduct').addEventListener('click', function() {
+      var productName = document.getElementById('productName').value;
+      var quantity = document.getElementById('quantity').value;
+      var price = document.getElementById('price').value;
+
+      var total = parseFloat(quantity) * parseFloat(price);
+
+      var table = document.getElementById('productTable');
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+
+      cell1.innerHTML = productName;
+      cell2.innerHTML = quantity;
+      cell3.innerHTML = '₹' + price;
+      cell4.innerHTML = '₹' + total.toFixed(2);
+
+      updateTotal();
+      clearInputs();
+    });
+
+    document.getElementById('invoiceBtn').addEventListener('click', function() {
+      alert('Invoice generated!');
+      clearTable();
+    });
+
+    function updateTotal() {
+      var table = document.getElementById('productTable');
+      var total = 0;
+      for (var i = 1; i < table.rows.length; i++) {
+        total += parseFloat(table.rows[i].cells[3].innerHTML.replace('₹', ''));
+      }
+      document.getElementById('totalAmount').innerHTML = total.toFixed(2);
+    }
+
+    function clearInputs() {
+      document.getElementById('productName').value = '';
+      document.getElementById('quantity').value = '';
+      document.getElementById('price').value = '';
+    }
+
+    function clearTable() {
+      var table = document.getElementById('productTable');
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
+      document.getElementById('totalAmount').innerHTML = '0.00';
+    }
+  </script>
+</body>
+</html>

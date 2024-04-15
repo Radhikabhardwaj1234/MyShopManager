@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" href="project.css"/>
+
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <a href="home.html">
+      <img src="logo.jpg" width=40%>
+    </a>
+    </div>
+    <div id="header_center">
+      <center><h1>MyshopManager</h1></center>
+    </div>
+  </header>
+  
+  <nav>
+    <ul>
+    <li><a href="home.html">Home</a></li>
+  <li><a href="home.html#about">About Us</a></li>
+<li><a href="home.html#services">Services</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="/logout">LogOut</a></li>
+
+  </ul>
+  </nav>
+  
+  <div class="container">
+    <section id="home">
+    
+      <div class="slider">
+        <div><img src="logo.jpg" alt="Slide 1"></div>
+        <div><img src="bodyimage.jpg" alt="Slide 2"></div>
+        <div><img src="white.jpg" alt="Slide 3"></div>
+    
+    </section>
+    
+  <section id="emptydiv"></section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+      
+        <div class="service">
+        <a href="billing.html">
+          <h3>Biling</h3>
+        
+        </a>
+        </div>
+      
+        <div class="service">
+          <a href="stock.html">
+          <h3>Manage Stock</h3>
+          
+        </a>
+        </div>
+        <div class="service">
+          <a href="dues.html">
+          <h3>Manage dues</h3>
+        </a>
+        </div>
+        <div class="service">
+          <a href="income.html">
+          <h3>Track Daily Income</h3>
+       
+        </a>
+        </div>
+        <div class="service">
+          <a href="service5.html">
+          <h3>Service 3</h3>
+          <p>Description of service 3.</p>
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a team of professionals dedicated to providing excellent services to our clients.</p>
+    </section>
+
+   
+  <footer id="contact" class="company-info"> 
+ <div class="container">
+
+<h3>Contact Us</h3>
+  <br><br>
+<p> <strong> We'd love to hear from you!</strong></p>
+<p> You can reach out to us at:</p>
+<br><br>
+<p>MyShopManager is One of the largest business management platform.</p>
+  <p><strong>Phone:</strong> +91-9606800800</p>
+  <p><strong>Email:</strong> feedback@khatabook.com</p>
+  <p><strong>Address:</strong> 1203, 22nd Cross Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</p>
+
+    </div>
+</div>
+<p>&copy; 2024 My Website. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 1000,
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        fade: false,
+        cssEase: 'linear'
+      });
+    });
+  
+  </script>
+</body>
+</html>
+ 
+
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Website</title>
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+   <link rel="stylesheet" href="project.css"/>
+ 
+   <style>
+     /* Additional CSS for enhancements */
+ 
+     /* Header and Navigation */
+     header {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 20px;
+       background-color: black;
+       color: rgba(50, 239, 91, 0.9);
+     }
+ 
+     #logo {
+       width: 40%;
+       text-align: left;
+     }
+ 
+     #header_center {
+       text-align: center;
+     }
+ 
+     nav ul {
+       margin: 0;
+       padding: 0;
+       list-style: none;
+     }
+ 
+     nav ul li {
+       display: inline-block;
+       margin: 0 20px;
+     }
+ 
+     nav ul li a {
+       font-size: 18px;
+       color: rgba(50, 239, 91, 0.9);
+       text-decoration: none;
+       transition: color 0.3s;
+     }
+ 
+     nav ul li a:hover {
+       color: #fff;
+     }
+ 
+     /* Slider Section */
+     .slider {
+       margin-top: 20px;
+     }
+ 
+     .slider img {
+       width: 100%;
+     }
+ 
+     /* Services Section */
+     #services {
+       text-align: center;
+       padding: 50px 0;
+       background-color: #f8f9fa;
+     }
+ 
+     .services {
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+     }
+ 
+     .service {
+       width: 200px;
+       margin: 20px;
+       padding: 20px;
+       background-color: #fff;
+       border-radius: 8px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       transition: transform 0.3s;
+     }
+ 
+     .service:hover {
+       transform: translateY(-5px);
+     }
+ 
+     .service h3 {
+       font-size: 24px;
+       margin-bottom: 10px;
+     }
+ 
+     .service p {
+       font-size: 16px;
+       color: #666;
+     }
+ 
+     /* About Us Section */
+     #about {
+       text-align: center;
+       padding: 50px 0;
+     }
+ 
+     #about p {
+       font-size: 18px;
+       line-height: 1.6;
+     }
+ 
+     /* Footer */
+     footer {
+       padding: 50px 0;
+       background-color: #333;
+       color: #fff;
+       text-align: center;
+     }
+ 
+     footer p {
+       font-size: 14px;
+     }
+ 
+     .company-info {
+       margin-top: 20px;
+     }
+ 
+     .company-info h3 {
+       font-size: 24px;
+       margin-bottom: 10px;
+     }
+ 
+     .company-info p {
+       font-size: 18px;
+       margin-bottom: 10px;
+     }
+   </style>
+ </head>
+ <body>
+   <header>
+     <div id="logo">
+       <a href="home.html">
+         <img src="logo.jpg" alt="Logo">
+       </a>
+     </div>
+     <div id="header_center">
+       <h1>MyshopManager</h1>
+     </div>
+   </header>
+   
+   <nav>
+     <ul>
+       <li><a href="home.html">Home</a></li>
+       <li><a href="home.html#about">About Us</a></li>
+       <li><a href="home.html#services">Services</a></li>
+       <li><a href="contact.html">Contact Us</a></li>
+       <li><a href="/logout">LogOut</a></li>
+     </ul>
+   </nav>
+   
+   <div class="container">
+     <section id="home">
+       <div class="slider">
+         <div><img src="logo.jpg" alt="Slide 1"></div>
+         <div><img src="bodyimage.jpg" alt="Slide 2"></div>
+         <div><img src="white.jpg" alt="Slide 3"></div>
+       </div>
+     </section>
+     
+     <section id="services">
+       <h2>Our Services</h2>
+       <div class="services">
+         <div class="service">
+           <a href="billing.html">
+             <h3>Billing</h3>
+           </a>
+         </div>
+         <div class="service">
+           <a href="stock.html">
+             <h3>Manage Stock</h3>
+           </a>
+         </div>
+         <div class="service">
+           <a href="dues.html">
+             <h3>Manage Dues</h3>
+           </a>
+         </div>
+         <div class="service">
+           <a href="income.html">
+             <h3>Track Daily Income</h3>
+           </a>
+         </div>
+       </div>
+     </section>
+ 
+     <section id="about">
+       <h2>About Us</h2>
+       <p>We are a team of professionals dedicated to providing excellent services to our clients.</p>
+     </section>
+   </div>
+ 
+   <footer id="contact" class="company-info"> 
+     <div class="container">
+       <h3>Contact Us</h3>
+       <p><strong>We'd love to hear from you!</strong></p>
+       <p>You can reach out to us at:</p>
+       <p>MyShopManager is one of the largest business management platforms.</p>
+       <p><strong>Phone:</strong> +91-9606800800</p>
+       <p><strong>Email:</strong> feedback@khatabook.com</p>
+       <p><strong>Address:</strong> 1203, 22nd Cross Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</p>
+     </div>
+   </footer>
+ 
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+   <script>
+     $(document).ready(function(){
+       $('.slider').slick({
+         autoplay: true,
+         autoplaySpeed: 1000,
+         dots: true,
+         arrows: false,
+         infinite: true,
+         speed: 500,
+         fade: false,
+         cssEase: 'linear'
+       });
+     });
+   </script>
+ </body>
+ </html> -->
+ 

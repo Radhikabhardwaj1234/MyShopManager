@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  
+<header>
+  <div id="logo">
+    <a href="home.html">
+      <img src="logo.jpg" alt="Logo">
+    </a>
+  </div>
+ 
+<nav>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="home.html#about">About Us</a></li>
+    <li><a href="home.html#services">Services</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+  </ul>
+</nav> 
+</header>  
+<div id="background">
+    <div class="registration-container">
+       
+        <form id="registration-form" onsubmit="return validateForm()" action="/register" method="POST">
+            <div class="input-group">
+                <label for="shop_name">Shop Name:</label>
+                <input type="text" id="first_name" name="shopName" placeholder="Shop_name" pattern="[A-Za-z]{3,}" title="Minimum 3 characters, alphabets only" required>
+            </div>
+            <div class="input-group">
+                <label for="first_name">Name:</label>
+                <input type="text" id="first_name" name="name" placeholder="First_name"  required>
+            </div>
+            
+          
+            <div class="input-group">
+                <label for="aadhar_number">Aadhar Number:</label>
+                <input type="text" id="aadhar_number" name="aadharNumber" placeholder=" Aadhar_number" pattern="[0-9]{12}" title="Aadhar number must be 12 digits" required>
+            </div>
+            <div class="input-group">
+                <label for="phone_number">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phoneNumber"placeholder="Phone_number " pattern="[0-9]{10}" title="Phone number must be 10 digits" required>
+            </div>
+            <div class="input-group">
+                <label for="shop_address">Shop Address:</label>
+                <textarea type="text" cols="40" rows="5" contenteditable="true" id="Shop_address"  placeholder="shop_address" name="shopAddress" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password " minlength="8" required>
+                <i class="fas fa-eye show-password-icon" onclick="togglePasswordVisibility()"></i>
+
+            </div>
+            <div class="input-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirmPassword" placeholder="Confirm_password " required>
+            </div>
+            <div class="input-group">
+                <button type="submit"><i class="fas fa-user-plus"></i> Register</button>
+            </div>
+            <div class="register-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </form>
+    </div>
+</div>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            if (password != confirm_password) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
+<script>
+    function togglePasswordVisibility() {
+         var passwordInput = document.getElementById('password');
+         var passwordIcon = document.querySelector('.show-password-icon');
+ 
+         if (passwordInput.type === 'password') {
+             passwordInput.type = 'text';
+             passwordIcon.classList.remove('fa-eye');
+             passwordIcon.classList.add('fa-eye-slash');
+         } else {
+             passwordInput.type = 'password';
+             passwordIcon.classList.remove('fa-eye-slash');
+             passwordIcon.classList.add('fa-eye');
+         }
+     }
+ </script>
+</body>
+</html>
